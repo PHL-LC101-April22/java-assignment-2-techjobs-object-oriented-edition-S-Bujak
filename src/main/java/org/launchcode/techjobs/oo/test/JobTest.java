@@ -46,11 +46,5 @@ public class JobTest {
        assertFalse(job1.equals(job2));
     }
 }
-//In JobTest, define a test called testSettingJobId. Do not forget to annotate it with @Test.
-//
-//Create two Job objects using the empty constructor.
-//
-//Use assertNotEquals to verify that the IDs of the two objects are distinct.
-//
-//Run the test using the run configuration that you created above.
+
 
