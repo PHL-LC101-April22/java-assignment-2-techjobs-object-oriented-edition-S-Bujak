@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
 
+
 import static org.junit.Assert.*;
 
 /**
@@ -45,6 +46,28 @@ public class JobTest {
        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
        assertFalse(job1.equals(job2));
     }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("\n", testJob.toString().charAt(0));
+        assertEquals("\n", testJob.toString().charAt(testJob.toString().length()-1));
+
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndDat() {
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("\nId: 1\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", testJob.toString());
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job testJob = new Job( "",new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+    }
+
+
 }
 
 

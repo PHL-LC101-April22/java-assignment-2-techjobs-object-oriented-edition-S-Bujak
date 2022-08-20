@@ -92,4 +92,14 @@ public Job(String name, Employer employer, Location location, PositionType posit
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+//    if ("" || null) {
+//        "Data not available"
+//    }
+
+    return ("\nID: " + id + "\nName: " + name + "\nEmployer: " + employer + "\nLocation: " + location + "\nPosition Type: " + positionType + "\nCore Competency: " + coreCompetency);
+    }
+
 }
